@@ -10,6 +10,8 @@ import SwiftUI
 struct ContentView: View {
   @State private   var name = ""
         @State private var textTitle = " What is your name?"
+    @State private var email = ""
+    @State private var textEmail = "What is your email?"
     var body: some View {
         VStack {
          
@@ -19,7 +21,14 @@ struct ContentView: View {
                 .multilineTextAlignment(.center)
                 .font(.title)
                 .border(Color.gray, width: 1)
-            Button("Submit Name") {
+            
+            Text(textEmail)
+                .font(.title)
+            TextField("Type your email here...", text: $name)
+                .multilineTextAlignment(.center)
+                .font(.title2)
+                .border(Color.blue, width: 1)
+            Button("Submit ") {
               textTitle = "Welcome, \(name) !"
             
              }
